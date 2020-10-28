@@ -1,18 +1,14 @@
 import './styles.css';
 import menuItemTpl from './templates/menu-item.hbs';
 import menu from './menu.json';
-
+import refs from './refs'
 
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
 
-const refs = {
-  menuList: document.querySelector('.js-menu'),
-  checkbox: document.querySelector('#theme-switch-toggle'),
-  body: document.querySelector('body'),
-};
+
 
 refs.menuList.innerHTML = menu.map(menuItemTpl).join('');
 if (JSON.parse(localStorage.getItem('checked-dark-theme'))) {
