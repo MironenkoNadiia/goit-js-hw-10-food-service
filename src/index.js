@@ -1,7 +1,7 @@
 import './styles.css';
 import menuItemTpl from './templates/menu-item.hbs';
 import menu from './menu.json';
-import './styles.css';
+
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -29,17 +29,15 @@ function checkboxChange() {
   refs.body.classList.toggle(`${Theme.LIGHT}`);
   refs.body.classList.toggle(`${Theme.DARK}`);
 
-  if (refs.checkbox.getAttribute('checked') === 'true') {
+  if (refs.checkbox.checked) {
     refs.checkbox.removeAttribute('checked');
     refs.checkbox.setAttribute('checked', false);
 
-    localStorage.removeItem('checked-dark-theme');
     localStorage.setItem('checked-dark-theme', false);
   } else {
     refs.checkbox.removeAttribute('checked');
     refs.checkbox.setAttribute('checked', true);
 
-    localStorage.removeItem('checked-dark-theme');
     localStorage.setItem('checked-dark-theme', true);
   }
 }
