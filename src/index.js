@@ -1,7 +1,13 @@
 import './styles.css';
 import menuItemTpl from './templates/menu-item.hbs';
 import menu from './menu.json';
-import refs from './refs'
+
+const refs = require('./refs');
+// {
+//   menuList: document.querySelector('.js-menu'),
+//   checkbox: document.querySelector('#theme-switch-toggle'),
+//   body: document.querySelector('body'),
+// };
 
 const Theme = {
   LIGHT: 'light-theme',
